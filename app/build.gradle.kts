@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt.plugin)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -41,14 +43,23 @@ android {
 
 dependencies {
 
+    /** Core */
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    /** Compose **/
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.bundles.compose)
+
+    /** Hilt **/
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+
+    /** Networking */
+    implementation(libs.bundles.networking)
+
+    /** Testing */
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,4 +1,4 @@
-package dev.luanramos.thelightningnodesrank.ui.theme
+package dev.luanramos.thelightningnodesrank.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
