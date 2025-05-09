@@ -56,6 +56,7 @@ dependencies {
     /** Hilt **/
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+    ksp(libs.hilt.navigation.compose)
 
     /** Networking */
     implementation(libs.bundles.networking)

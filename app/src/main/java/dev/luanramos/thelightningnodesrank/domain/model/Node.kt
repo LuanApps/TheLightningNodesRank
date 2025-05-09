@@ -13,7 +13,7 @@ data class Node(
     @SerializedName("firstSeen") val firstSeen: Long,
     @SerializedName("updatedAt") val updatedAt: Long,
     @SerializedName("city") val city: TranslatedField? = null,
-    @SerializedName("country") val country: TranslatedField
+    @SerializedName("country") val country: TranslatedField? = null
 ): Parcelable
 
 @Parcelize
