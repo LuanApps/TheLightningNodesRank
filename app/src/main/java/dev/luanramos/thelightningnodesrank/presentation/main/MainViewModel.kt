@@ -17,11 +17,15 @@ class MainViewModel @Inject constructor(
     private val getNodesUseCase: GetNodesUseCase
 ): ViewModel() {
 
-    private val _nodesData = MutableLiveData<List<Node>>()
-    val nodesData: LiveData<List<Node>> get() = _nodesData
+    private val _nodesData = MutableLiveData<List<Node>?>()
+    val nodesData: LiveData<List<Node>?> get() = _nodesData
 
     init {
         loadNodesList()
+    }
+
+    fun clearNodeList(){
+        _nodesData.postValue(null)
     }
 
     fun loadNodesList(){
@@ -30,6 +34,7 @@ class MainViewModel @Inject constructor(
                 val list = getNodesUseCase()
                 _nodesData.postValue(list)
             } catch (e: Exception) {
+                _nodesData.postValue(listOf())
                 Log.e("NodesLog", "Error fetching nodes", e)
             }
         }
