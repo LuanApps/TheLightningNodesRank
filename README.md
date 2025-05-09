@@ -1,6 +1,6 @@
 # TheLightningNodesRank
 
-![The App](the_lightning_nodes_rank_app.gif)
+![The App](lightning_nodes_app.gif)
 
 This project is an example of how to build an Android Application using the MVVM Architecture, using all the industry-standart patterns and frameworks. This project was made using Android Studio IDE
 
